@@ -14,93 +14,191 @@
    <string>AlgoVisualizer</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QComboBox" name="algoSelector">
-    <property name="geometry">
-     <rect>
-      <x>910</x>
-      <y>10</y>
-      <width>101</width>
-      <height>22</height>
-     </rect>
-    </property>
+   <layout class="QVBoxLayout" name="verticalLayout_main">
     <item>
-     <property name="text">
-      <string>Bubble Sort</string>
-     </property>
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="tabSortowanie">
+       <attribute name="title">
+        <string>Sortowanie</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_sort">
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_sort">
+          <item>
+           <spacer name="horizontalSpacer_sort">
+            <property name="orientation">
+             <enum>Qt::Orientation::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>0</width>
+              <height>0</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QComboBox" name="algoSelector">
+            <item>
+             <property name="text">
+              <string>Bubble Sort</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Insertion Sort</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Quick Sort</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Merge Sort</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Selection Sort</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Counting Sort</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Bucket Sort</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="visualizeCheckBox">
+            <property name="text">
+             <string>Wizualizacja</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="sortButton">
+            <property name="text">
+             <string>Sortuj</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QLabel" name="resultLabel">
+          <property name="frameShape">
+           <enum>QFrame::Shape::Box</enum>
+          </property>
+          <property name="text">
+           <string>Wybierz parametry i naciśnij Sortuj</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignmentFlag::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tabDrzewa">
+       <attribute name="title">
+        <string>Struktury danych</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_tree">
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_tree">
+          <item>
+           <widget class="QComboBox" name="treeTypeSelector">
+            <item>
+             <property name="text">
+              <string>AVL Tree</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Red-Black Tree</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="treeValueInput">
+            <property name="placeholderText">
+             <string>Wartość...</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="treeInsertButton">
+            <property name="text">
+             <string>Wstaw</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="treeRemoveButton">
+            <property name="text">
+             <string>Usuń</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="treeSearchButton">
+            <property name="text">
+             <string>Szukaj</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="treeClearButton">
+            <property name="text">
+             <string>Wyczyść</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_tree">
+            <property name="orientation">
+             <enum>Qt::Orientation::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>0</width>
+              <height>0</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QLabel" name="treeCanvas">
+          <property name="frameShape">
+           <enum>QFrame::Shape::Box</enum>
+          </property>
+          <property name="text">
+           <string>Drzewo jest puste. Wstaw węzeł.</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignmentFlag::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
     </item>
-    <item>
-     <property name="text">
-      <string>Insertion Sort</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Quick Sort</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Merge Sort</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Selection Sort</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Counting Sort</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Bucket Sort</string>
-     </property>
-    </item>
-   </widget>
-   <widget class="QPushButton" name="sortButton">
-    <property name="geometry">
-     <rect>
-      <x>920</x>
-      <y>70</y>
-      <width>75</width>
-      <height>24</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Sortuj</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="resultLabel">
-    <property name="geometry">
-     <rect>
-      <x>140</x>
-      <y>110</y>
-      <width>841</width>
-      <height>441</height>
-     </rect>
-    </property>
-    <property name="frameShape">
-     <enum>QFrame::Shape::Box</enum>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="QCheckBox" name="visualizeCheckBox">
-    <property name="geometry">
-     <rect>
-      <x>920</x>
-      <y>40</y>
-      <width>91</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Wizualizacja</string>
-    </property>
-   </widget>
+   </layout>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
