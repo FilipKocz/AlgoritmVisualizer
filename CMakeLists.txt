@@ -14,6 +14,8 @@ qt_add_executable(projekt
     sorter.h sorter.cpp
     avl_tree.h avl_tree.cpp
     rb_tree.h rb_tree.cpp
+    graph.h graph.cpp
+    maze.h maze.cpp
 )
 
 target_link_libraries(projekt
