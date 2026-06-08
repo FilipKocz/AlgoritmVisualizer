@@ -309,11 +309,9 @@ void AlgoVisualizer::on_graphAlgoButton_clicked() {
     int startId = graph.getNodes().front().id;
     QString algo = ui->graphAlgoSelector->currentText();
 
-    if      (algo == "BFS")         currentGraphResult = graph.bfs(startId);
-    else if (algo == "DFS")         currentGraphResult = graph.dfs(startId);
-    else if (algo == "Dijkstra")    currentGraphResult = graph.dijkstra(startId);
-    else if (algo == "Prim MST")    currentGraphResult = graph.primMST();
-    else if (algo == "Kruskal MST") currentGraphResult = graph.kruskalMST();
+    if      (algo == "BFS")      currentGraphResult = graph.bfs(startId);
+    else if (algo == "DFS")      currentGraphResult = graph.dfs(startId);
+    else if (algo == "Dijkstra") currentGraphResult = graph.dijkstra(startId);
 
     renderGraph(&currentGraphResult);
     ui->statusbar->showMessage(QString("%1 | Odwiedzone: %2 | Krawędzie drzewa: %3 | Porównania: %4")

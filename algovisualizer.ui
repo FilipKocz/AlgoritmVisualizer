@@ -18,8 +18,10 @@
     <item>
      <widget class="QTabWidget" name="tabWidget">
       <property name="currentIndex">
-       <number>2</number>
+       <number>0</number>
       </property>
+
+      <!-- ========== ZAKŁADKA 1: SORTOWANIE ========== -->
       <widget class="QWidget" name="tabSortowanie">
        <attribute name="title">
         <string>Sortowanie</string>
@@ -33,83 +35,44 @@
              <enum>Qt::Orientation::Horizontal</enum>
             </property>
             <property name="sizeHint" stdset="0">
-             <size>
-              <width>0</width>
-              <height>0</height>
-             </size>
+             <size><width>0</width><height>0</height></size>
             </property>
            </spacer>
           </item>
           <item>
            <widget class="QComboBox" name="algoSelector">
-            <item>
-             <property name="text">
-              <string>Bubble Sort</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Insertion Sort</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Quick Sort</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Merge Sort</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Selection Sort</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Counting Sort</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Bucket Sort</string>
-             </property>
-            </item>
+            <item><property name="text"><string>Bubble Sort</string></property></item>
+            <item><property name="text"><string>Insertion Sort</string></property></item>
+            <item><property name="text"><string>Quick Sort</string></property></item>
+            <item><property name="text"><string>Merge Sort</string></property></item>
+            <item><property name="text"><string>Selection Sort</string></property></item>
+            <item><property name="text"><string>Counting Sort</string></property></item>
+            <item><property name="text"><string>Bucket Sort</string></property></item>
            </widget>
           </item>
           <item>
            <widget class="QCheckBox" name="visualizeCheckBox">
-            <property name="text">
-             <string>Wizualizacja</string>
-            </property>
+            <property name="text"><string>Wizualizacja</string></property>
            </widget>
           </item>
           <item>
            <widget class="QPushButton" name="sortButton">
-            <property name="text">
-             <string>Sortuj</string>
-            </property>
+            <property name="text"><string>Sortuj</string></property>
            </widget>
           </item>
          </layout>
         </item>
         <item>
          <widget class="QLabel" name="resultLabel">
-          <property name="frameShape">
-           <enum>QFrame::Shape::Box</enum>
-          </property>
-          <property name="text">
-           <string>Wybierz parametry i naciśnij Sortuj</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignmentFlag::AlignCenter</set>
-          </property>
+          <property name="frameShape"><enum>QFrame::Shape::Box</enum></property>
+          <property name="text"><string>Wybierz parametry i naciśnij Sortuj</string></property>
+          <property name="alignment"><set>Qt::AlignmentFlag::AlignCenter</set></property>
          </widget>
         </item>
        </layout>
       </widget>
+
+      <!-- ========== ZAKŁADKA 2: STRUKTURY DANYCH ========== -->
       <widget class="QWidget" name="tabDrzewa">
        <attribute name="title">
         <string>Struktury danych</string>
@@ -119,63 +82,40 @@
          <layout class="QHBoxLayout" name="horizontalLayout_tree">
           <item>
            <widget class="QComboBox" name="treeTypeSelector">
-            <item>
-             <property name="text">
-              <string>AVL Tree</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Red-Black Tree</string>
-             </property>
-            </item>
+            <item><property name="text"><string>AVL Tree</string></property></item>
+            <item><property name="text"><string>Red-Black Tree</string></property></item>
            </widget>
           </item>
           <item>
            <widget class="QLineEdit" name="treeValueInput">
-            <property name="placeholderText">
-             <string>Wartość...</string>
-            </property>
+            <property name="placeholderText"><string>Wartość...</string></property>
            </widget>
           </item>
           <item>
            <widget class="QPushButton" name="treeInsertButton">
-            <property name="text">
-             <string>Wstaw</string>
-            </property>
+            <property name="text"><string>Wstaw</string></property>
            </widget>
           </item>
           <item>
            <widget class="QPushButton" name="treeRemoveButton">
-            <property name="text">
-             <string>Usuń</string>
-            </property>
+            <property name="text"><string>Usuń</string></property>
            </widget>
           </item>
           <item>
            <widget class="QPushButton" name="treeSearchButton">
-            <property name="text">
-             <string>Szukaj</string>
-            </property>
+            <property name="text"><string>Szukaj</string></property>
            </widget>
           </item>
           <item>
            <widget class="QPushButton" name="treeClearButton">
-            <property name="text">
-             <string>Wyczyść</string>
-            </property>
+            <property name="text"><string>Wyczyść</string></property>
            </widget>
           </item>
           <item>
            <spacer name="horizontalSpacer_tree">
-            <property name="orientation">
-             <enum>Qt::Orientation::Horizontal</enum>
-            </property>
+            <property name="orientation"><enum>Qt::Orientation::Horizontal</enum></property>
             <property name="sizeHint" stdset="0">
-             <size>
-              <width>0</width>
-              <height>0</height>
-             </size>
+             <size><width>0</width><height>0</height></size>
             </property>
            </spacer>
           </item>
@@ -183,19 +123,15 @@
         </item>
         <item>
          <widget class="QLabel" name="treeCanvas">
-          <property name="frameShape">
-           <enum>QFrame::Shape::Box</enum>
-          </property>
-          <property name="text">
-           <string>Drzewo jest puste. Wstaw węzeł.</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignmentFlag::AlignCenter</set>
-          </property>
+          <property name="frameShape"><enum>QFrame::Shape::Box</enum></property>
+          <property name="text"><string>Drzewo jest puste. Wstaw węzeł.</string></property>
+          <property name="alignment"><set>Qt::AlignmentFlag::AlignCenter</set></property>
          </widget>
         </item>
        </layout>
       </widget>
+
+      <!-- ========== ZAKŁADKA 3: GRAFY ========== -->
       <widget class="QWidget" name="tabGraf">
        <attribute name="title">
         <string>Grafy</string>
@@ -205,111 +141,60 @@
          <layout class="QHBoxLayout" name="horizontalLayout_graph">
           <item>
            <widget class="QLabel" name="labelNodes">
-            <property name="text">
-             <string>Węzły:</string>
-            </property>
+            <property name="text"><string>Węzły:</string></property>
            </widget>
           </item>
           <item>
            <widget class="QSpinBox" name="graphNodeCount">
-            <property name="minimum">
-             <number>2</number>
-            </property>
-            <property name="maximum">
-             <number>20</number>
-            </property>
-            <property name="value">
-             <number>7</number>
-            </property>
+            <property name="minimum"><number>2</number></property>
+            <property name="maximum"><number>20</number></property>
+            <property name="value"><number>7</number></property>
            </widget>
           </item>
           <item>
            <widget class="QLabel" name="labelEdges">
-            <property name="text">
-             <string>Krawędzie:</string>
-            </property>
+            <property name="text"><string>Krawędzie:</string></property>
            </widget>
           </item>
           <item>
            <widget class="QSpinBox" name="graphEdgeCount">
-            <property name="minimum">
-             <number>1</number>
-            </property>
-            <property name="maximum">
-             <number>60</number>
-            </property>
-            <property name="value">
-             <number>10</number>
-            </property>
+            <property name="minimum"><number>1</number></property>
+            <property name="maximum"><number>60</number></property>
+            <property name="value"><number>10</number></property>
            </widget>
           </item>
           <item>
            <widget class="QCheckBox" name="graphDirectedCheck">
-            <property name="text">
-             <string>Skierowany</string>
-            </property>
+            <property name="text"><string>Skierowany</string></property>
            </widget>
           </item>
           <item>
            <widget class="QPushButton" name="graphGenerateButton">
-            <property name="text">
-             <string>Generuj graf</string>
-            </property>
+            <property name="text"><string>Generuj graf</string></property>
            </widget>
           </item>
           <item>
            <widget class="QComboBox" name="graphAlgoSelector">
-            <item>
-             <property name="text">
-              <string>BFS</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>DFS</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Dijkstra</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string/>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string/>
-             </property>
-            </item>
+            <item><property name="text"><string>BFS</string></property></item>
+            <item><property name="text"><string>DFS</string></property></item>
+            <item><property name="text"><string>Dijkstra</string></property></item>
            </widget>
           </item>
           <item>
            <widget class="QPushButton" name="graphAlgoButton">
-            <property name="text">
-             <string>Uruchom</string>
-            </property>
+            <property name="text"><string>Uruchom</string></property>
            </widget>
           </item>
           <item>
            <widget class="QPushButton" name="graphClearButton">
-            <property name="text">
-             <string>Wyczyść</string>
-            </property>
+            <property name="text"><string>Wyczyść</string></property>
            </widget>
           </item>
           <item>
            <spacer name="horizontalSpacer_graph">
-            <property name="orientation">
-             <enum>Qt::Orientation::Horizontal</enum>
-            </property>
+            <property name="orientation"><enum>Qt::Orientation::Horizontal</enum></property>
             <property name="sizeHint" stdset="0">
-             <size>
-              <width>0</width>
-              <height>0</height>
-             </size>
+             <size><width>0</width><height>0</height></size>
             </property>
            </spacer>
           </item>
@@ -317,19 +202,15 @@
         </item>
         <item>
          <widget class="QLabel" name="graphCanvas">
-          <property name="frameShape">
-           <enum>QFrame::Shape::Box</enum>
-          </property>
-          <property name="text">
-           <string>Kliknij 'Generuj graf' aby zacząć.</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignmentFlag::AlignCenter</set>
-          </property>
+          <property name="frameShape"><enum>QFrame::Shape::Box</enum></property>
+          <property name="text"><string>Kliknij &apos;Generuj graf&apos; aby zacząć.</string></property>
+          <property name="alignment"><set>Qt::AlignmentFlag::AlignCenter</set></property>
          </widget>
         </item>
        </layout>
       </widget>
+
+      <!-- ========== ZAKŁADKA 4: LABIRYNT ========== -->
       <widget class="QWidget" name="tabLabirynt">
        <attribute name="title">
         <string>Labirynt</string>
@@ -339,85 +220,43 @@
          <layout class="QHBoxLayout" name="horizontalLayout_maze">
           <item>
            <widget class="QLabel" name="labelMazeSize">
-            <property name="text">
-             <string>Rozmiar:</string>
-            </property>
+            <property name="text"><string>Rozmiar:</string></property>
            </widget>
           </item>
           <item>
            <widget class="QComboBox" name="mazeSizeSelector">
-            <item>
-             <property name="text">
-              <string>21x21</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>31x31</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>41x41</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>51x51</string>
-             </property>
-            </item>
+            <item><property name="text"><string>21x21</string></property></item>
+            <item><property name="text"><string>31x31</string></property></item>
+            <item><property name="text"><string>41x41</string></property></item>
+            <item><property name="text"><string>51x51</string></property></item>
            </widget>
           </item>
           <item>
            <widget class="QPushButton" name="mazeGenerateButton">
-            <property name="text">
-             <string>Generuj labirynt</string>
-            </property>
+            <property name="text"><string>Generuj labirynt</string></property>
            </widget>
           </item>
           <item>
            <widget class="QLabel" name="labelMazeSolver">
-            <property name="text">
-             <string>Algorytm:</string>
-            </property>
+            <property name="text"><string>Algorytm:</string></property>
            </widget>
           </item>
           <item>
            <widget class="QComboBox" name="mazeSolverSelector">
-            <item>
-             <property name="text">
-              <string>BFS</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>DFS</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string/>
-             </property>
-            </item>
+            <item><property name="text"><string>BFS</string></property></item>
+            <item><property name="text"><string>DFS</string></property></item>
            </widget>
           </item>
           <item>
            <widget class="QPushButton" name="mazeSolveButton">
-            <property name="text">
-             <string>Rozwiąż</string>
-            </property>
+            <property name="text"><string>Rozwiąż</string></property>
            </widget>
           </item>
           <item>
            <spacer name="horizontalSpacer_maze">
-            <property name="orientation">
-             <enum>Qt::Orientation::Horizontal</enum>
-            </property>
+            <property name="orientation"><enum>Qt::Orientation::Horizontal</enum></property>
             <property name="sizeHint" stdset="0">
-             <size>
-              <width>0</width>
-              <height>0</height>
-             </size>
+             <size><width>0</width><height>0</height></size>
             </property>
            </spacer>
           </item>
@@ -425,19 +264,14 @@
         </item>
         <item>
          <widget class="QLabel" name="mazeCanvas">
-          <property name="frameShape">
-           <enum>QFrame::Shape::Box</enum>
-          </property>
-          <property name="text">
-           <string>Kliknij 'Generuj labirynt' aby zacząć.</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignmentFlag::AlignCenter</set>
-          </property>
+          <property name="frameShape"><enum>QFrame::Shape::Box</enum></property>
+          <property name="text"><string>Kliknij &apos;Generuj labirynt&apos; aby zacząć.</string></property>
+          <property name="alignment"><set>Qt::AlignmentFlag::AlignCenter</set></property>
          </widget>
         </item>
        </layout>
       </widget>
+
      </widget>
     </item>
    </layout>
@@ -448,7 +282,7 @@
      <x>0</x>
      <y>0</y>
      <width>1036</width>
-     <height>18</height>
+     <height>22</height>
     </rect>
    </property>
   </widget>

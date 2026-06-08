@@ -273,7 +273,6 @@ GraphAlgoResult Graph::kruskalMST() {
 void Graph::generateRandom(int nodeCount, int edgeCount, bool directed) {
     clear();
     std::mt19937 rng(std::random_device{}());
-    std::uniform_real_distribution<double> posDist(0.05, 0.95);
     std::uniform_int_distribution<int> weightDist(1, 20);
 
     // Dodaj węzły w kole + lekki losowy offset
@@ -285,21 +284,34 @@ void Graph::generateRandom(int nodeCount, int edgeCount, bool directed) {
         addNode(i, x, y);
     }
 
-    // Najpierw dodaj drzewo spinające żeby graf był spójny
     std::vector<int> ids;
     for (const auto& n : nodes) ids.push_back(n.id);
     std::shuffle(ids.begin(), ids.end(), rng);
-    for (int i = 1; i < (int)ids.size(); ++i) {
-        int w = weightDist(rng);
-        addEdge(ids[i-1], ids[i], w, directed);
+
+    if (!directed) {
+        // NIESKIEROWANY: losowe drzewo spinające
+        for (int i = 1; i < (int)ids.size(); ++i) {
+            int parentIdx = std::uniform_int_distribution<int>(0, i-1)(rng);
+            addEdge(ids[parentIdx], ids[i], weightDist(rng), false);
+        }
+    } else {
+        // SKIEROWANY: BFS-drzewo od węzła 0
+        // krawędź ZAWSZE od rodzica do nowego węzła - gwarantuje osiągalność
+        std::vector<int> reachable;
+        reachable.push_back(ids[0]);
+        for (int i = 1; i < (int)ids.size(); ++i) {
+            int parentIdx = std::uniform_int_distribution<int>(0, (int)reachable.size()-1)(rng);
+            addEdge(reachable[parentIdx], ids[i], weightDist(rng), true);
+            reachable.push_back(ids[i]);
+        }
     }
 
     // Dodaj pozostałe losowe krawędzie
+    int added = (int)nodes.size() - 1;
     int attempts = 0;
-    int added = nodes.size() - 1;
     while (added < edgeCount && attempts < 1000) {
-        int a = ids[std::uniform_int_distribution<int>(0, ids.size()-1)(rng)];
-        int b = ids[std::uniform_int_distribution<int>(0, ids.size()-1)(rng)];
+        int a = ids[std::uniform_int_distribution<int>(0, (int)ids.size()-1)(rng)];
+        int b = ids[std::uniform_int_distribution<int>(0, (int)ids.size()-1)(rng)];
         if (a != b && !hasEdge(a, b)) {
             addEdge(a, b, weightDist(rng), directed);
             added++;
