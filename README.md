@@ -46,3 +46,11 @@ Generator losowych labiryntów oparty na algorytmie Recursive Backtracker — ka
 ## 👤 Autor
 
 Filip Koczorowski
+
+
+
+🛠 Jak uruchomić:
+
+Pobierz: Użyj komendy git clone https://github.com/FilipKocz/AlgoritmVisualizer lub pobierz ZIP i rozpakuj.
+Otwórz: Uruchom QT i otwórz projekt
+Uruchom: Uruchom projekt
